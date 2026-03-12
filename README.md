@@ -18,15 +18,25 @@ npm run preview  # Preview production build
 npm run lint     # TypeScript check
 ```
 
+## Creating a Post
+
+1. Create a new `.md` file in `content/posts/`
+2. Add frontmatter: `slug`, `title`, `excerpt`, `date`
+3. Write content in Markdown (code blocks supported)
+4. Run `npm run generate-posts` (or `npm run dev` / `npm run build`)
+
+See [content/posts/README.md](content/posts/README.md) for the full guide.
+
 ## Structure
 
 ```
+content/posts/   # Markdown source files
 src/
-├── components/   # Layout, Header, Footer
-├── data/         # Blog posts
-├── pages/        # Route pages
-├── types/        # TypeScript interfaces
+├── components/  # Layout, Header, Footer, MarkdownRenderer
+├── data/        # Generated posts (from content/posts/*.md)
+├── pages/       # Route pages
+├── types/       # TypeScript interfaces
 ├── App.tsx
 ├── main.tsx
-└── index.css     # Tailwind directives
+└── index.css    # Tailwind directives
 ```

@@ -1,7 +1,8 @@
 import { useParams, Link } from "react-router-dom";
-import { getPostBySlug } from "@/data/posts";
+import { getPostBySlug } from "@/data/posts.data";
+import { MarkdownRenderer } from "@/components/markdown-renderer.component";
 
-export function BlogPostPage(): React.ReactElement {
+export const BlogPostPage = (): React.ReactElement => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug != null ? getPostBySlug(slug) : undefined;
 
@@ -38,8 +39,8 @@ export function BlogPostPage(): React.ReactElement {
           {post.date}
         </time>
       </header>
-      <div className="mt-6 space-y-4 whitespace-pre-wrap text-lg leading-relaxed">
-        {post.content}
+      <div className="mt-6 text-lg">
+        <MarkdownRenderer content={post.content} />
       </div>
     </article>
   );

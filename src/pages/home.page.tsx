@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { POSTS } from "@/data/posts";
+import { postsData } from "@/data/posts.data";
 
-export function HomePage(): React.ReactElement {
+export const HomePage = (): React.ReactElement => {
   return (
     <article className="mx-auto max-w-3xl px-4 py-4 sm:px-6 sm:py-8">
       <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -13,7 +13,7 @@ export function HomePage(): React.ReactElement {
       <section className="mt-8">
         <h2 className="text-xl font-semibold">Recent Posts</h2>
         <ul className="mt-4 space-y-4">
-          {POSTS.map((post) => (
+          {postsData.map((post) => (
             <li key={post.slug}>
               <Link
                 to={`/blog/${post.slug}`}

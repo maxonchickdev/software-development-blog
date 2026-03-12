@@ -1,4 +1,4 @@
-export interface Post {
+export type PostType = {
   readonly slug: string;
   readonly title: string;
   readonly excerpt: string;

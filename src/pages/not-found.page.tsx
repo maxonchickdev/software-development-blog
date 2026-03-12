@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export function NotFoundPage(): React.ReactElement {
+export const NotFoundPage = (): React.ReactElement => {
   return (
     <article className="mx-auto max-w-3xl px-4 py-4 sm:px-6 sm:py-8">
       <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">

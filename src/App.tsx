@@ -1,19 +1,19 @@
 import { Routes, Route } from "react-router-dom";
-import { Layout } from "./components/Layout";
-import { HomePage } from "./pages/HomePage";
-import { AboutPage } from "./pages/AboutPage";
-import { BlogPostPage } from "./pages/BlogPostPage";
-import { NotFoundPage } from "./pages/NotFoundPage";
+import { LayoutComponent } from "./components/layout.component";
+import { HomePage } from "./pages/home.page";
+import { BlogPostPage } from "./pages/blog-post.page";
+import { NotFoundPage } from "./pages/not-found.page";
+import { AboutPage } from "./pages/about.page";
 
-export function App(): React.ReactElement {
+export const App = (): React.ReactElement => {
   return (
-    <Layout>
+    <LayoutComponent>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-    </Layout>
+    </LayoutComponent>
   );
 }

@@ -5,7 +5,7 @@ const NAV_ITEMS = [
   { path: "/about", label: "About" },
 ] as const;
 
-export function Header(): React.ReactElement {
+export const HeaderComponent = (): React.ReactElement => {
   const location = useLocation();
 
   return (

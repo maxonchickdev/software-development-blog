@@ -1,4 +1,4 @@
-export function Footer(): React.ReactElement {
+export const FooterComponent = (): React.ReactElement => {
   const year = new Date().getFullYear();
 
   return (
