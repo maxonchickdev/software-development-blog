@@ -1,13 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const rootEl = document.getElementById('root');
+import { AppRouter } from "@/src/app/router";
+import { ThemeProvider } from "@/src/app/providers/theme-provider";
+
+import "@/src/styles/globals.css";
+
+const rootEl = document.getElementById("root");
 if (rootEl) {
   const root = ReactDOM.createRoot(rootEl);
   root.render(
     <React.StrictMode>
-      <App />
+      <ThemeProvider>
+        <AppRouter />
+      </ThemeProvider>
     </React.StrictMode>,
   );
 }
