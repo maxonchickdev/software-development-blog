@@ -10,10 +10,8 @@ Vite's `import.meta.glob` lets you import multiple modules matching a pattern. U
 ## Basic Usage
 
 ```typescript
-// Eager: all modules loaded immediately
 const modules = import.meta.glob("./posts/*.md");
 
-// Lazy: modules loaded on demand
 const modules = import.meta.glob("./posts/*.md", { eager: false });
 ```
 
@@ -35,7 +33,6 @@ const posts = Object.entries(postModules).map(([path, content]) => {
 ## With Query for Raw Content
 
 ```typescript
-// ?raw returns the file as a string
 const rawFiles = import.meta.glob("/content/**/*.md", {
   query: "?raw",
   import: "default",

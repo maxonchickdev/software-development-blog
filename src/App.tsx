@@ -1,19 +1,19 @@
-import { Routes, Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { LayoutComponent } from "./components/layout.component";
-import { HomePage } from "./pages/home.page";
-import { BlogPostPage } from "./pages/blog-post.page";
-import { NotFoundPage } from "./pages/not-found.page";
 import { AboutPage } from "./pages/about.page";
+import { BlogPostPage } from "./pages/blog-post.page";
+import { HomePage } from "./pages/home.page";
+import { NotFoundPage } from "./pages/not-found.page";
 
 export const App = (): React.ReactElement => {
-  return (
-    <LayoutComponent>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/blog/:slug" element={<BlogPostPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-    </LayoutComponent>
-  );
-}
+	return (
+		<LayoutComponent>
+			<Routes>
+				<Route element={<HomePage />} path="/" />
+				<Route element={<AboutPage />} path="/about" />
+				<Route element={<BlogPostPage />} path="/blog/:slug" />
+				<Route element={<NotFoundPage />} path="*" />
+			</Routes>
+		</LayoutComponent>
+	);
+};

@@ -19,10 +19,8 @@ interface User {
   password: string;
 }
 
-// Public profile: only name and email
 type PublicUser = Pick<User, "name" | "email">;
 
-// Create user: everything except id (auto-generated)
 type CreateUserInput = Omit<User, "id">;
 ```
 
@@ -31,10 +29,8 @@ type CreateUserInput = Omit<User, "id">;
 Make all properties optional or required:
 
 ```typescript
-// For updates: all fields optional
 type UserUpdate = Partial<User>;
 
-// Ensure nothing is optional
 type StrictConfig = Required<Config>;
 ```
 

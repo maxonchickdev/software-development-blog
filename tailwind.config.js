@@ -1,17 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  theme: {
-    extend: {
-      colors: {
-        black: "#000000",
-        white: "#ffffff",
-      },
-      fontFamily: {
-        sans: ["system-ui", "ui-sans-serif", "sans-serif"],
-        mono: ["ui-monospace", "monospace"],
-      },
-    },
-  },
-  plugins: [],
+	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+	plugins: [],
+	theme: {
+		extend: {
+			colors: {
+				black: "#000000",
+				white: "#ffffff",
+			},
+			fontFamily: {
+				mono: ["ui-monospace", "monospace"],
+				sans: ["system-ui", "ui-sans-serif", "sans-serif"],
+			},
+		},
+	},
 };

@@ -7,18 +7,15 @@ import "./index.css";
 
 const rootElement = document.getElementById("root");
 if (rootElement == null) {
-  throw new Error("Root element not found");
+	throw new Error("Root element not found");
 }
 
-const BASE =
-  import.meta.env.BASE_URL === "/"
-    ? "/"
-    : import.meta.env.BASE_URL.replace(/\/$/, "");
+const BASE = import.meta.env.BASE_URL === "/" ? "/" : import.meta.env.BASE_URL.replace(/\/$/, "");
 
 createRoot(rootElement).render(
-  <StrictMode>
-    <BrowserRouter basename={BASE}>
-      <App />
-    </BrowserRouter>
-  </StrictMode>,
+	<StrictMode>
+		<BrowserRouter basename={BASE}>
+			<App />
+		</BrowserRouter>
+	</StrictMode>,
 );

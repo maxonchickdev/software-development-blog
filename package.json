@@ -1,36 +1,45 @@
 {
-  "name": "software-development-blog",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "generate-posts": "node scripts/generate-posts.js",
-    "dev": "npm run generate-posts && vite",
-    "build": "npm run generate-posts && tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "lint": "tsc --noEmit",
-    "deploy": "gh-pages -d dist"
-  },
-  "dependencies": {
-    "gray-matter": "^4.0.3",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-markdown": "^10.1.0",
-    "react-router-dom": "^6.28.0",
-    "react-syntax-highlighter": "^16.1.1",
-    "remark-gfm": "^4.0.1"
-  },
-  "devDependencies": {
-    "@types/node": "^22.9.0",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "@types/react-syntax-highlighter": "^15.5.13",
-    "@vitejs/plugin-react": "^4.3.3",
-    "autoprefixer": "^10.4.20",
-    "gh-pages": "^6.3.0",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.15",
-    "typescript": "~5.6.2",
-    "vite": "^5.4.10"
-  }
+	"dependencies": {
+		"gray-matter": "^4.0.3",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-markdown": "^10.1.0",
+		"react-router-dom": "^6.28.0",
+		"react-syntax-highlighter": "^16.1.1",
+		"remark-gfm": "^4.0.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.6",
+		"@commitlint/cli": "^20.4.4",
+		"@commitlint/config-conventional": "^20.4.4",
+		"@commitlint/types": "^20.4.4",
+		"@types/node": "^22.9.0",
+		"@types/react": "^18.3.12",
+		"@types/react-dom": "^18.3.1",
+		"@types/react-syntax-highlighter": "^15.5.13",
+		"@vitejs/plugin-react": "^4.3.3",
+		"autoprefixer": "^10.4.20",
+		"concurrently": "^9.2.1",
+		"gh-pages": "^6.3.0",
+		"postcss": "^8.4.49",
+		"simple-git-hooks": "^2.13.1",
+		"tailwindcss": "^3.4.15",
+		"typescript": "~5.6.2",
+		"vite": "^5.4.10"
+	},
+	"name": "software-development-blog",
+	"private": true,
+	"scripts": {
+		"build": "tsc --noEmit && vite build",
+		"deploy": "gh-pages -d dist",
+		"dev": "vite",
+		"hooks:init": "simple-git-hooks",
+		"hooks:precommit": "concurrently 'npm run lint:types:check' 'npm run lint:all:check'",
+		"lint:all:check": "biome check .",
+		"lint:all:fix": "biome check --write .",
+		"lint:types:check": "tsc --noEmit",
+		"preview": "vite preview"
+	},
+	"type": "module",
+	"version": "0.0.0"
 }
