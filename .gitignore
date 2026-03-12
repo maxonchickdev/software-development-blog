@@ -1,16 +1,13 @@
-# Local
-.DS_Store
-*.local
-*.log*
-
-# Dist
 node_modules
-dist/
-
-# Profile
-.rspack-profile-*/
-
-# IDE
-.vscode/*
-!.vscode/extensions.json
-.idea
+.DS_Store
+dist
+dist-ssr
+*.local
+.env
+.nitro
+.tanstack
+.wrangler
+.output
+.vinxi
+__unconfig*
+todos.json
