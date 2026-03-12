@@ -5,7 +5,7 @@ on:
     branches: ['main']
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -33,10 +33,10 @@ jobs:
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Upload artifacts
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: './dist'
-      - name: Deploy to GIthub pages
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
